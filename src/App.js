@@ -1,10 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Main from "./Main";
+import BookingPage from "./BookingPage.jsx"
+import Booked from "./Booked.jsx";
+
 
 function App() {
   return (
     <div>
-      hello
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/BookingPage" element={<BookingPage />} />
+        <Route path="/Booked" element={<Booked />} />
+      </Routes>
     </div>
   );
 }

@@ -1,0 +1,740 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+
+.wrapper {
+  background-color: white;
+}
+
+a,
+Link {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.innerWidth {
+  width: 100%;
+}
+
+@media (min-width: 1280px) {
+  .innerWidth {
+    max-width: 1280px;
+    margin: auto;
+  }
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2rem;
+  position: fixed;
+  top: 0;
+  left: 50%; /* Start the nav from the center of the page */
+  transform: translateX(-50%);
+  z-index: 1000;
+  transition: top 0.3s ease; /* Smooth transition for hiding/showing */
+}
+
+nav.nav-hide {
+  top: -100px; /* Adjust this value as needed to hide the nav */
+}
+
+nav.nav-show {
+  top: 0;
+}
+
+nav img {
+  width: 10rem;
+}
+
+.left-nav {
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  color: rgba(255, 255, 255, 0.75);
+  display: flex;
+  margin-left: 4rem;
+  gap: 1.5rem;
+}
+
+.login-btn {
+  color: white;
+  background-color: #f4cf15;
+  width: 6.25rem;
+  height: 1.875rem;
+  border-radius: 5px;
+  border: none;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  font-size: 0.85rem;
+  box-shadow: 0 0 100px 10px rgba(255, 255, 255, 0.25);
+  transition: all 0.2s ease-in-out;
+}
+
+.login-btn:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.hero-wrapper {
+  position: relative; /* Needed for the ::before pseudo-element */
+  height: 100vh;
+  background-image: url("./Assets/fish.jpg"); /* Replace with the path to your image */
+  background-size: cover; /* Ensures the image covers the entire area */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat;
+  padding-top: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.hero-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Adjust opacity to make the image darker */
+  z-index: 1; /* Places the overlay above the background image but below the content */
+}
+
+.hero-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Ensures the content is above the overlay */
+  padding: 2rem;
+  text-align: center;
+  z-index: 2;
+}
+
+.hero-heading {
+  line-height: 0.45;
+  padding-bottom: 3rem;
+}
+
+.hero-heading h1 {
+  font-size: 7.5rem;
+  color: #f4cf15;
+  text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
+    2px 2px 0 black, -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black,
+    3px 3px 0 black;
+}
+
+.hero-heading span {
+  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: none;
+}
+
+.hero-desc {
+  font-size: 1.25rem;
+  color: white;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hero-btn {
+  margin-top: 2rem;
+  height: 3.5rem;
+  width: 13.5rem;
+  background-color: #f4cf15;
+  border: white solid 1px;
+  border-radius: 7px;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 0 100px 10px rgba(255, 255, 255, 0.25);
+}
+
+.hero-btn:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.specials-wrapper {
+  height: 96vh;
+  background-color: white;
+}
+
+.specials-container {
+  margin-top: 4.375rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.specials-cards {
+  width: 80%;
+  border-top: black solid 1px;
+  border-bottom: black solid 1px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.specials-top {
+  position: absolute;
+  top: -2.25rem;
+  background-color: white;
+  padding: 0 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.875rem;
+  font-weight: 600;
+}
+
+.specials-bottom {
+  position: absolute;
+  bottom: -1rem;
+  background-color: white;
+  padding: 0 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 1.75rem;
+}
+.specials-btn {
+  background: none;
+  width: 9rem;
+  height: 2rem;
+  font-size: 0.675rem;
+  letter-spacing: 0.15rem;
+  font-weight: 600;
+  border: 2px solid black;
+  transition: all 0.2s ease-in-out;
+}
+
+.specials-btn:hover {
+  transform: scale(1.025);
+  cursor: pointer;
+}
+
+.specials-heading h1 {
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.15rem;
+}
+
+.specials-cards > p {
+  margin-top: 2.5rem;
+  line-height: 1.75;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.box-cards {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.special-card {
+  height: 35rem;
+  width: 17rem;
+  background-color: green;
+  background: #eceeed;
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 10px 10px 25px 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.15s ease-in-out;
+  margin: 2rem 0rem 5rem 0rem;
+}
+
+.special-card:hover {
+  transform: scale(1.05);
+  background-color: #f7f7f7;
+}
+
+.special-card img {
+  width: 100%; /* Make the image fit the width of the card */
+  object-fit: contain; /* Ensures the image covers the card area without distortion */
+  border-radius: 8px; /* Match the card’s border-radius */
+}
+
+.card-head {
+  margin: 0.75rem 1.5rem 0rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-head h1 {
+  font-size: 1.25rem;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.card-head p {
+  color: hsla(33, 100%, 50%, 0.8);
+  font-weight: 700;
+}
+
+.card-desc {
+  margin: 0 1.5rem;
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: rgba(0, 0, 0, 0.65);
+  line-height: 1.75;
+}
+
+.card-order a {
+  display: flex;
+  width: 61%;
+  align-items: flex-end;
+  border-bottom: 1px black solid;
+  margin: 0rem 1.75rem 1rem 1.75rem;
+}
+
+.card-order p {
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.card-order span {
+  padding-left: 1rem;
+  font-size: 1.4rem;
+  opacity: 0.65;
+}
+
+.testimonial-wrapper {
+  height: 58vh;
+  position: relative;
+}
+
+.testimonial-background {
+  height: 85%;
+  width: 100%;
+  background-image: url("./Assets/friends-eating-conversating-restaurant.jpg"); /* Replace with your image URL */
+  background-size: cover; /* Ensure the image covers the entire container */
+  background-position: center; /* Center the image */
+  position: absolute;
+  z-index: 2; /* Ensure this is above the wrapper but below any additional content */
+  border-radius: 8px; /* Optional: Add some rounding to the corners */
+
+  /* Dark overlay */
+  display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  z-index: -1;
+}
+
+.testimonial-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  z-index: 3; /* Ensure the overlay is above the image */
+  border-radius: 8px; /* Match the rounding of the background */
+}
+
+.testimonial-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.testimonial-heading h1 {
+  color: white;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.15rem;
+  text-align: center;
+}
+
+.testimonial-heading h2 {
+  margin-top: 0.75rem;
+  color: white;
+  font-size: 2.875rem;
+  font-weight: 600;
+}
+
+.testimonial-heading {
+  margin-top: 5rem;
+}
+
+.testimonial-cards {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  height: 18rem;
+}
+
+.test-card {
+  width: 30.5%;
+  height: 100%;
+  border-radius: 13px;
+  background-color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  color: white;
+  text-align: center;
+  padding: 4rem 3rem 2rem 3rem;
+}
+
+.test-img-container {
+  width: 6rem;
+  height: 6rem;
+  background-color: #f4cf15;
+  border-radius: 50%;
+  position: absolute;
+  top: -3.75rem;
+  padding: 0.3rem; /* Add padding to create a consistent border */
+  box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.test-img-container img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%; /* Ensure the image is circular */
+  object-fit: cover; /* Ensure the image covers the entire area without distortion */
+  object-position: top; /* Crop the image to show the top part */
+}
+
+.test-comment {
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 400;
+}
+
+.test-name {
+  margin-top: 1.125rem;
+  font-size: 1.125rem;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+}
+
+.card-rating {
+  font-size: 0.75rem;
+}
+
+.chicago-wrapper {
+  height: 60vh;
+  position: relative;
+}
+
+.chicago-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.chicago-heading h1 {
+  font-size: 2.875rem;
+  font-weight: 700;
+}
+
+.chicago-desc {
+  padding: 0 12rem;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+}
+
+.chicago-btn {
+  margin-top: 2rem;
+  background: none;
+  width: 13rem;
+  height: 2.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.15rem;
+  font-weight: 600;
+  border: 2px solid black;
+  transition: all 0.2s ease-in-out;
+}
+
+.chicago-btn:hover {
+  transform: scale(1.025);
+}
+
+.chicago-call {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.chicago-call h2 {
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.15rem;
+  text-align: center;
+}
+
+.chicago-call p {
+  margin-top: 0.75rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+  font-size: 2.875rem;
+  text-shadow: black 0.25px 0.25px;
+}
+
+.food-back {
+  position: absolute;
+  bottom: -1rem;
+  right: 0;
+  z-index: -1;
+}
+
+.food2-back {
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
+  z-index: -1;
+}
+
+.footer-wrapper {
+  background-color: #1a1a1a;
+  height: 30vh;
+  color: white;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.footer-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.footer-logo img {
+  width: 7rem;
+}
+
+.footer-location {
+  height: 100%;
+  width: 100%;
+}
+
+.footer-links {
+  height: 100%;
+  width: 100%;
+}
+
+.footer-socials {
+  height: 100%;
+  width: 100%;
+}
+
+.footer-container h1 {
+  font-weight: 500;
+  margin-top: 4rem;
+  letter-spacing: 0.1rem;
+  font-size: 1.25rem;
+  padding-bottom: 1rem;
+}
+
+.footer-container p {
+  font-size: 0.75rem;
+  line-height: 1.75;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.maps {
+  padding-top: 1rem;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.maps span {
+  font-size: 1.25rem;
+}
+
+.footer-links {
+  line-height: 1.3;
+}
+.footer-links a {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.soc {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  font-size: 1.25rem;
+}
+
+.booking-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5fa;
+}
+
+.booking-container {
+  height: 40rem;
+  width: 30rem;
+  background: #f5f5fa;
+  border-radius: 8px;
+  box-shadow: -10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17;
+  box-sizing: border-box;
+  position: relative;
+  transition: box-shadow 0.2s, background 0.2s;
+  padding: 1.5rem;
+}
+
+.booking-container:hover {
+  background: #f8f8ff;
+  box-shadow: -15px -15px 30px 0 #fff, 15px 15px 30px 0 #1d0dca17;
+}
+
+.booking-container form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.booking-container form div {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+input,
+select {
+  height: 3rem;
+  border-radius: 7px;
+  padding: 0 1rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  letter-spacing: 0.075rem;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  appearance: none;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+form button {
+  margin-top: 3rem;
+  height: 3rem;
+  border-radius: 7px;
+  padding: 0 1rem;
+  font-weight: 600;
+  font-size: 1.25rem;
+  letter-spacing: 0.2rem;
+  border: 1px solid rgba(0, 0, 0, 1);
+  background-color: #f4cf15;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 10px 10px 100px 10px rgba(0, 0, 0, 0.25);
+}
+
+form button:hover {
+  transform: scale(1.025);
+  background-color: #ffe043;
+  box-shadow: 00px 0px 25px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  letter-spacing: 0.2rem;
+  font-weight: 600;
+  margin: 1rem 0 0.5rem 0.5rem;
+}
+
+form span {
+  position: absolute;
+  top: 3.375rem;
+  right: 0.875rem;
+  transition: all 0.3s ease-in-out;
+  opacity: 0.5;
+}
+
+select:active + span {
+    transform: rotate(180deg);
+    opacity: 1;
+}
+
+.material-symbols-outlined {
+    font-size: 2.5rem; /* Adjust the size as needed */
+}
+
+.error {
+    color: red;
+    font-weight: 400;
+    font-size: 0.75rem;
+    margin-left: 0.5rem;
+    margin-top: 0.25rem;
+}
+
+.input-error {
+  border: 1px solid red;
+}
+
+.booking-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.booking-container h1 {
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: 0.12rem;
+    margin: 7.5rem 0rem;
+}
+
+.booking-container button {
+    width: 12.5rem;
+    height: 2.25rem;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.2rem;
+    background: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.booking-container button:hover {
+    transform: scale(1.025);
+    cursor: pointer;
+}
